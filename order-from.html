@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+    <style>
+        body {
+            background-color: #007bff; /* পেছনের নীল ব্যাকগ্রাউন্ড */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background-color: #000000; /* ফর্মের কালো ব্যাকগ্রাউন্ড */
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 350px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-container h2 {
+            text-align: left;
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .form-container p {
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-bottom: 1px solid #333333;
+            background-color: transparent;
+            color: #ffffff;
+        }
+
+        .form-container .price {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .form-container .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-container .submit-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <form action="http://localhost:3000/submit-order" method="POST">
+            <h2>Domain</h2>
+            <p>Please change nameservers to:</p>
+            <ul>
+                <li>ns1.perfectdns.com</li>
+                <li>ns2.perfectdns.com</li>
+            </ul>
+
+            <h2>Currency</h2>
+            <p>United States Dollars (USD)</p>
+
+            <h2>Admin username</h2>
+            <input type="text" name="admin_username" placeholder="Admin username" required>
+
+            <h2>Admin password</h2>
+            <input type="password" name="admin_password" placeholder="Admin password" required>
+
+            <h2>Confirm password</h2>
+            <input type="password" name="confirm_password" placeholder="Confirm password" required>
+
+            <h2>Price per month</h2>
+            <p class="price">$25.00</p>
+
+            <button type="submit" class="submit-btn">Submit order</button>
+        </form>
+    </div>
+
+</body>
+</html>
